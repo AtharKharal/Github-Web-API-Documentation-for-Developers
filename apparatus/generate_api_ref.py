@@ -1,7 +1,56 @@
 import json
 import os
 import sys
+import re
 from jinja2 import Environment, FileSystemLoader
+
+def generate_code_snippets(method, request_url_obj, body):
+    if isinstance(request_url_obj, dict):
+        url = request_url_obj.get('raw', '')
+    else:
+        url = str(request_url_obj)
+        
+    url = url.replace('{{baseUrl}}', 'https://api.github.com')
+    
+    curl_snippet = f"curl -L \\\n  -X {method} \\\n  -H \"Accept: application/vnd.github+json\" \\\n  -H \"Authorization: Bearer <YOUR-TOKEN>\""
+    if url:
+        curl_snippet += f" \\\n  {url}"
+    if body and body != "{}":
+        safe_body = body.replace("'", "'\\''")
+        curl_snippet += f" \\\n  -d '{safe_body}'"
+        
+    python_snippet = "import requests\n\n"
+    python_snippet += "headers = {\n"
+    python_snippet += "  'Accept': 'application/vnd.github+json',\n"
+    python_snippet += "  'Authorization': 'Bearer <YOUR-TOKEN>'\n"
+    python_snippet += "}\n\n"
+    if body and body != "{}":
+        python_snippet += "import json\n\n"
+        python_snippet += f"data = {body}\n\n"
+        python_snippet += f"response = requests.{method.lower()}('{url}', headers=headers, data=json.dumps(data))\n"
+    else:
+        python_snippet += f"response = requests.{method.lower()}('{url}', headers=headers)\n"
+    python_snippet += "print(response.json())"
+    
+    path = url.replace('https://api.github.com', '').strip()
+    path_interpolated = re.sub(r':([a-zA-Z0-9_]+)', r'{\1}', path)
+
+    js_snippet = "const { Octokit } = require(\"@octokit/rest\");\n"
+    js_snippet += "const octokit = new Octokit({\n  auth: 'YOUR-TOKEN'\n});\n\n"
+    js_snippet += f"await octokit.request('{method} {path_interpolated}', {{\n"
+    js_snippet += "  headers: {\n"
+    js_snippet += "    'X-GitHub-Api-Version': '2022-11-28'\n"
+    js_snippet += "  }"
+    if body and body != "{}":
+        body_indented = body.replace('\n', '\n  ')
+        js_snippet += f",\n  ...{body_indented}"
+    js_snippet += "\n});"
+
+    return {
+        'curl': curl_snippet,
+        'python': python_snippet,
+        'javascript': js_snippet
+    }
 
 def extract_parameters(request_url):
     """
@@ -93,13 +142,15 @@ def generate_api_reference(collection_path, output_dir, template_dir):
         endpoints = []
         for item in folder_items:
             req = item['request']
+            body_str = extract_body(req)
             endpoints.append({
                 'name': item['name'],
                 'method': req['method'],
                 'description': req.get('description', 'No description.'),
                 'parameters': extract_parameters(req['url']),
-                'request_body': extract_body(req),
+                'request_body': body_str,
                 'response_body': extract_response(item.get('response', [])),
+                'snippets': generate_code_snippets(req['method'], req['url'], body_str),
                 'notes': '' # Potential space for audit results
             })
             

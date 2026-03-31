@@ -16,6 +16,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/grants/:grant_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/applications/grants/:grant_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /applications/grants/{grant_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -55,6 +98,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/grants/:grant_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/applications/grants/:grant_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /applications/grants/{grant_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -80,6 +166,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/grants?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/applications/grants?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /applications/grants?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -127,6 +256,61 @@
       "access_token": "<string>"
     }
     ```
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/:client_id/token \
+          -d '{
+          "access_token": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "access_token": "<string>"
+        }
+
+        response = requests.post('https://api.github.com/applications/:client_id/token', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('POST /applications/{client_id}/token', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "access_token": "<string>"
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -200,6 +384,61 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PATCH \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/:client_id/token \
+          -d '{
+          "access_token": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "access_token": "<string>"
+        }
+
+        response = requests.patch('https://api.github.com/applications/:client_id/token', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PATCH /applications/{client_id}/token', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "access_token": "<string>"
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -271,6 +510,61 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/:client_id/token \
+          -d '{
+          "access_token": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "access_token": "<string>"
+        }
+
+        response = requests.delete('https://api.github.com/applications/:client_id/token', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /applications/{client_id}/token', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "access_token": "<string>"
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -296,6 +590,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/:client_id/tokens/:access_token
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/applications/:client_id/tokens/:access_token', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /applications/{client_id}/tokens/{access_token}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -364,6 +701,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/:client_id/tokens/:access_token
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.post('https://api.github.com/applications/:client_id/tokens/:access_token', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('POST /applications/{client_id}/tokens/{access_token}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -430,6 +810,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/:client_id/tokens/:access_token
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/applications/:client_id/tokens/:access_token', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /applications/{client_id}/tokens/{access_token}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -463,6 +886,61 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/:client_id/grant \
+          -d '{
+          "access_token": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "access_token": "<string>"
+        }
+
+        response = requests.delete('https://api.github.com/applications/:client_id/grant', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /applications/{client_id}/grant', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "access_token": "<string>"
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -490,6 +968,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/applications/:client_id/grants/:access_token
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/applications/:client_id/grants/:access_token', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /applications/{client_id}/grants/{access_token}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example

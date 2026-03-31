@@ -22,6 +22,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/enterprises/:enterprise_id/settings/billing/actions
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/enterprises/:enterprise_id/settings/billing/actions', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /enterprises/{enterprise_id}/settings/billing/actions', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -61,6 +104,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/enterprises/:enterprise_id/settings/billing/packages
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/enterprises/:enterprise_id/settings/billing/packages', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /enterprises/{enterprise_id}/settings/billing/packages', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -93,6 +179,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/enterprises/:enterprise_id/settings/billing/shared-storage
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/enterprises/:enterprise_id/settings/billing/shared-storage', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /enterprises/{enterprise_id}/settings/billing/shared-storage', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example

@@ -18,6 +18,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/blocks/:username
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/blocks/:username', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/blocks/{username}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -40,6 +83,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PUT \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/blocks/:username
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.put('https://api.github.com/user/blocks/:username', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PUT /user/blocks/{username}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -66,6 +152,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/blocks/:username
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/user/blocks/:username', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/blocks/{username}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -81,6 +210,49 @@
 
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/blocks
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/blocks', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/blocks', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -129,6 +301,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/emails?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/emails?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/emails?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -162,6 +377,70 @@
       ]
     }
     ```
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/emails \
+          -d '{
+          "emails": [
+            "<string>",
+            "<string>"
+          ]
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "emails": [
+            "<string>",
+            "<string>"
+          ]
+        }
+
+        response = requests.post('https://api.github.com/user/emails', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('POST /user/emails', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "emails": [
+              "<string>",
+              "<string>"
+            ]
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -211,6 +490,70 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/emails \
+          -d '{
+          "emails": [
+            "<string>",
+            "<string>"
+          ]
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "emails": [
+            "<string>",
+            "<string>"
+          ]
+        }
+
+        response = requests.delete('https://api.github.com/user/emails', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/emails', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "emails": [
+              "<string>",
+              "<string>"
+            ]
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -233,6 +576,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/following/:username
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/following/:username', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/following/{username}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -261,6 +647,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PUT \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/following/:username
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.put('https://api.github.com/user/following/:username', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PUT /user/following/{username}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -283,6 +712,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/following/:username
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/user/following/:username', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/following/{username}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -308,6 +780,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/following?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/following?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/following?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -353,6 +868,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/gpg_keys/:gpg_key_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/gpg_keys/:gpg_key_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/gpg_keys/{gpg_key_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -413,6 +971,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/gpg_keys/:gpg_key_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/user/gpg_keys/:gpg_key_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/gpg_keys/{gpg_key_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -436,6 +1037,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/gpg_keys?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/gpg_keys?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/gpg_keys?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -499,6 +1143,61 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/gpg_keys \
+          -d '{
+          "armored_public_key": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "armored_public_key": "<string>"
+        }
+
+        response = requests.post('https://api.github.com/user/gpg_keys', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('POST /user/gpg_keys', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "armored_public_key": "<string>"
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -560,6 +1259,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PUT \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/installations/:installation_id/repositories/:repository_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.put('https://api.github.com/user/installations/:installation_id/repositories/:repository_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PUT /user/installations/{installation_id}/repositories/{repository_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -585,6 +1327,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/installations/:installation_id/repositories/:repository_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/user/installations/:installation_id/repositories/:repository_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/installations/{installation_id}/repositories/{repository_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -617,6 +1402,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/installations/:installation_id/repositories?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/installations/:installation_id/repositories?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/installations/{installation_id}/repositories?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -776,6 +1604,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/installations?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/installations?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/installations?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -890,6 +1761,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/keys/:key_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/keys/:key_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/keys/{key_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -923,6 +1837,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/keys/:key_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/user/keys/:key_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/keys/{key_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -946,6 +1903,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/keys?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/keys?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/keys?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -995,6 +1995,64 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/keys \
+          -d '{
+          "key": "<string>",
+          "title": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "key": "<string>",
+          "title": "<string>"
+        }
+
+        response = requests.post('https://api.github.com/user/keys', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('POST /user/keys', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "key": "<string>",
+            "title": "<string>"
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -1027,6 +2085,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/marketplace_purchases?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/marketplace_purchases?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/marketplace_purchases?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -1089,6 +2190,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/marketplace_purchases/stubbed?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/marketplace_purchases/stubbed?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/marketplace_purchases/stubbed?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -1146,6 +2290,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/memberships/orgs/:org
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/memberships/orgs/:org', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/memberships/orgs/{org}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -1219,6 +2406,61 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PATCH \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/memberships/orgs/:org \
+          -d '{
+          "state": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "state": "<string>"
+        }
+
+        response = requests.patch('https://api.github.com/user/memberships/orgs/:org', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PATCH /user/memberships/orgs/{org}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "state": "<string>"
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -1282,6 +2524,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/memberships/orgs?state=<string>&per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/memberships/orgs?state=<string>&per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/memberships/orgs?state=<string>&per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -1409,6 +2694,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/migrations/:migration_id/archive
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/migrations/:migration_id/archive', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/migrations/{migration_id}/archive', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -1431,6 +2759,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/migrations/:migration_id/archive
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/user/migrations/:migration_id/archive', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/migrations/{migration_id}/archive', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -1464,6 +2835,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/migrations/:migration_id?exclude=<string>&exclude=<string>
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/migrations/:migration_id?exclude=<string>&exclude=<string>', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/migrations/{migration_id}?exclude=<string>&exclude=<string>', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -1645,6 +3059,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/migrations/:migration_id/repos/:repo_name/lock
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/user/migrations/:migration_id/repos/:repo_name/lock', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -1669,6 +3126,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/migrations/:migration_id/repositories?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/migrations/:migration_id/repositories?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/migrations/{migration_id}/repositories?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -1810,6 +3310,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/migrations?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/migrations?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/migrations?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -2002,6 +3545,88 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/migrations \
+          -d '{
+          "repositories": [
+            "<string>",
+            "<string>"
+          ],
+          "lock_repositories": "<boolean>",
+          "exclude_attachments": "<boolean>",
+          "exclude": [
+            "<string>",
+            "<string>"
+          ]
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "repositories": [
+            "<string>",
+            "<string>"
+          ],
+          "lock_repositories": "<boolean>",
+          "exclude_attachments": "<boolean>",
+          "exclude": [
+            "<string>",
+            "<string>"
+          ]
+        }
+
+        response = requests.post('https://api.github.com/user/migrations', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('POST /user/migrations', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "repositories": [
+              "<string>",
+              "<string>"
+            ],
+            "lock_repositories": "<boolean>",
+            "exclude_attachments": "<boolean>",
+            "exclude": [
+              "<string>",
+              "<string>"
+            ]
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -2190,6 +3815,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/repos?visibility=all&affiliation=owner,collaborator,organization_member&type=all&sort=full_name&direction=<string>&per_page=30&page=1&since=<string>&before=<string>
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/repos?visibility=all&affiliation=owner,collaborator,organization_member&type=all&sort=full_name&direction=<string>&per_page=30&page=1&since=<string>&before=<string>', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/repos?visibility=all&affiliation=owner,collaborator,organization_member&type=all&sort=full_name&direction=<string>&per_page=30&page=1&since=<string>&before=<string>', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -2361,6 +4029,109 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/repos \
+          -d '{
+          "name": "<string>",
+          "description": "<string>",
+          "homepage": "<string>",
+          "private": false,
+          "has_issues": true,
+          "has_projects": true,
+          "has_wiki": true,
+          "team_id": "<integer>",
+          "auto_init": false,
+          "gitignore_template": "<string>",
+          "license_template": "<string>",
+          "allow_squash_merge": true,
+          "allow_merge_commit": true,
+          "allow_rebase_merge": true,
+          "delete_branch_on_merge": false,
+          "has_downloads": true,
+          "is_template": false
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "name": "<string>",
+          "description": "<string>",
+          "homepage": "<string>",
+          "private": false,
+          "has_issues": true,
+          "has_projects": true,
+          "has_wiki": true,
+          "team_id": "<integer>",
+          "auto_init": false,
+          "gitignore_template": "<string>",
+          "license_template": "<string>",
+          "allow_squash_merge": true,
+          "allow_merge_commit": true,
+          "allow_rebase_merge": true,
+          "delete_branch_on_merge": false,
+          "has_downloads": true,
+          "is_template": false
+        }
+
+        response = requests.post('https://api.github.com/user/repos', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('POST /user/repos', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "name": "<string>",
+            "description": "<string>",
+            "homepage": "<string>",
+            "private": false,
+            "has_issues": true,
+            "has_projects": true,
+            "has_wiki": true,
+            "team_id": "<integer>",
+            "auto_init": false,
+            "gitignore_template": "<string>",
+            "license_template": "<string>",
+            "allow_squash_merge": true,
+            "allow_merge_commit": true,
+            "allow_rebase_merge": true,
+            "delete_branch_on_merge": false,
+            "has_downloads": true,
+            "is_template": false
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -2506,6 +4277,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PATCH \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/repository_invitations/:invitation_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.patch('https://api.github.com/user/repository_invitations/:invitation_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PATCH /user/repository_invitations/{invitation_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -2528,6 +4342,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/repository_invitations/:invitation_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/user/repository_invitations/:invitation_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/repository_invitations/{invitation_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -2553,6 +4410,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/repository_invitations?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/repository_invitations?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/repository_invitations?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -2698,6 +4598,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/starred/:owner/:repo
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/starred/:owner/:repo', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/starred/{owner}/{repo}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -2723,6 +4666,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PUT \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/starred/:owner/:repo
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.put('https://api.github.com/user/starred/:owner/:repo', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PUT /user/starred/{owner}/{repo}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -2746,6 +4732,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/starred/:owner/:repo
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/user/starred/:owner/:repo', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /user/starred/{owner}/{repo}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -2775,6 +4804,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/starred?sort=created&direction=desc&per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/starred?sort=created&direction=desc&per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/starred?sort=created&direction=desc&per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -2919,6 +4991,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -2996,6 +5111,82 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PATCH \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user \
+          -d '{
+          "name": "<string>",
+          "email": "<string>",
+          "blog": "<string>",
+          "twitter_username": "<string>",
+          "company": "<string>",
+          "location": "<string>",
+          "hireable": "<boolean>",
+          "bio": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "name": "<string>",
+          "email": "<string>",
+          "blog": "<string>",
+          "twitter_username": "<string>",
+          "company": "<string>",
+          "location": "<string>",
+          "hireable": "<boolean>",
+          "bio": "<string>"
+        }
+
+        response = requests.patch('https://api.github.com/user', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PATCH /user', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "name": "<string>",
+            "email": "<string>",
+            "blog": "<string>",
+            "twitter_username": "<string>",
+            "company": "<string>",
+            "location": "<string>",
+            "hireable": "<boolean>",
+            "bio": "<string>"
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -3067,6 +5258,64 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PATCH \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/email/visibility \
+          -d '{
+          "email": "<string>",
+          "visibility": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "email": "<string>",
+          "visibility": "<string>"
+        }
+
+        response = requests.patch('https://api.github.com/user/email/visibility', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PATCH /user/email/visibility', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "email": "<string>",
+            "visibility": "<string>"
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -3097,6 +5346,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/followers?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/followers?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/followers?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -3154,6 +5446,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/issues?filter=assigned&state=open&labels=<string>&sort=created&direction=desc&since=<string>&per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/issues?filter=assigned&state=open&labels=<string>&sort=created&direction=desc&since=<string>&per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/issues?filter=assigned&state=open&labels=<string>&sort=created&direction=desc&since=<string>&per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -3445,6 +5780,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/orgs?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/orgs?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/orgs?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -3484,6 +5862,64 @@
       "body": "<string>"
     }
     ```
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/projects \
+          -d '{
+          "name": "<string>",
+          "body": "<string>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "name": "<string>",
+          "body": "<string>"
+        }
+
+        response = requests.post('https://api.github.com/user/projects', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('POST /user/projects', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "name": "<string>",
+            "body": "<string>"
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -3544,6 +5980,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/public_emails?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/public_emails?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/public_emails?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -3574,6 +6053,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/subscriptions?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/subscriptions?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/subscriptions?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -3715,6 +6237,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/user/teams?per_page=30&page=1
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/user/teams?per_page=30&page=1', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /user/teams?per_page=30&page=1', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example

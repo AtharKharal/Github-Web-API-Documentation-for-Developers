@@ -17,6 +17,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/scim/v2/organizations/:org/Users/:scim_user_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/scim/v2/organizations/:org/Users/:scim_user_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /scim/v2/organizations/{org}/Users/{scim_user_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -104,6 +147,130 @@
       "active": "<boolean>"
     }
     ```
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PUT \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/scim/v2/organizations/:org/Users/:scim_user_id \
+          -d '{
+          "userName": "<string>",
+          "name": {
+            "givenName": "<string>",
+            "familyName": "<string>",
+            "formatted": "<string>"
+          },
+          "emails": [
+            {
+              "value": "<string>",
+              "type": "<string>",
+              "primary": "<boolean>"
+            }
+          ],
+          "schemas": [
+            "<string>",
+            "<string>"
+          ],
+          "displayName": "<string>",
+          "externalId": "<string>",
+          "groups": [
+            "<string>",
+            "<string>"
+          ],
+          "active": "<boolean>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "userName": "<string>",
+          "name": {
+            "givenName": "<string>",
+            "familyName": "<string>",
+            "formatted": "<string>"
+          },
+          "emails": [
+            {
+              "value": "<string>",
+              "type": "<string>",
+              "primary": "<boolean>"
+            }
+          ],
+          "schemas": [
+            "<string>",
+            "<string>"
+          ],
+          "displayName": "<string>",
+          "externalId": "<string>",
+          "groups": [
+            "<string>",
+            "<string>"
+          ],
+          "active": "<boolean>"
+        }
+
+        response = requests.put('https://api.github.com/scim/v2/organizations/:org/Users/:scim_user_id', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PUT /scim/v2/organizations/{org}/Users/{scim_user_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "userName": "<string>",
+            "name": {
+              "givenName": "<string>",
+              "familyName": "<string>",
+              "formatted": "<string>"
+            },
+            "emails": [
+              {
+                "value": "<string>",
+                "type": "<string>",
+                "primary": "<boolean>"
+              }
+            ],
+            "schemas": [
+              "<string>",
+              "<string>"
+            ],
+            "displayName": "<string>",
+            "externalId": "<string>",
+            "groups": [
+              "<string>",
+              "<string>"
+            ],
+            "active": "<boolean>"
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -199,6 +366,109 @@
     ```
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X PATCH \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/scim/v2/organizations/:org/Users/:scim_user_id \
+          -d '{
+          "Operations": [
+            {
+              "op": "<string>",
+              "path": "<string>",
+              "value": {
+                "active": "<boolean>",
+                "userName": "<string>",
+                "externalId": "<string>",
+                "givenName": "<string>",
+                "familyName": "<string>"
+              }
+            }
+          ],
+          "schemas": [
+            "<string>",
+            "<string>"
+          ]
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "Operations": [
+            {
+              "op": "<string>",
+              "path": "<string>",
+              "value": {
+                "active": "<boolean>",
+                "userName": "<string>",
+                "externalId": "<string>",
+                "givenName": "<string>",
+                "familyName": "<string>"
+              }
+            }
+          ],
+          "schemas": [
+            "<string>",
+            "<string>"
+          ]
+        }
+
+        response = requests.patch('https://api.github.com/scim/v2/organizations/:org/Users/:scim_user_id', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('PATCH /scim/v2/organizations/{org}/Users/{scim_user_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "Operations": [
+              {
+                "op": "<string>",
+                "path": "<string>",
+                "value": {
+                  "active": "<boolean>",
+                  "userName": "<string>",
+                  "externalId": "<string>",
+                  "givenName": "<string>",
+                  "familyName": "<string>"
+                }
+              }
+            ],
+            "schemas": [
+              "<string>",
+              "<string>"
+            ]
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -253,6 +523,49 @@
 
     
 
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X DELETE \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/scim/v2/organizations/:org/Users/:scim_user_id
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.delete('https://api.github.com/scim/v2/organizations/:org/Users/:scim_user_id', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('DELETE /scim/v2/organizations/{org}/Users/{scim_user_id}', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
+    
+
     #### Response Example
     
     ```json
@@ -293,6 +606,49 @@
     
     
 
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X GET \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/scim/v2/organizations/:org/Users?startIndex=<integer>&count=<integer>&filter=<string>
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        response = requests.get('https://api.github.com/scim/v2/organizations/:org/Users?startIndex=<integer>&count=<integer>&filter=<string>', headers=headers)
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('GET /scim/v2/organizations/{org}/Users?startIndex=<integer>&count=<integer>&filter=<string>', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        ```
     
 
     #### Response Example
@@ -384,6 +740,130 @@
       "active": "<boolean>"
     }
     ```
+    
+
+    
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+        curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer <YOUR-TOKEN>" \
+          https://api.github.com/scim/v2/organizations/:org/Users \
+          -d '{
+          "userName": "<string>",
+          "name": {
+            "givenName": "<string>",
+            "familyName": "<string>",
+            "formatted": "<string>"
+          },
+          "emails": [
+            {
+              "value": "<string>",
+              "primary": "<boolean>",
+              "type": "<string>"
+            }
+          ],
+          "displayName": "<string>",
+          "schemas": [
+            "<string>",
+            "<string>"
+          ],
+          "externalId": "<string>",
+          "groups": [
+            "<string>",
+            "<string>"
+          ],
+          "active": "<boolean>"
+        }'
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+        import requests
+
+        headers = {
+          'Accept': 'application/vnd.github+json',
+          'Authorization': 'Bearer <YOUR-TOKEN>'
+        }
+
+        import json
+
+        data = {
+          "userName": "<string>",
+          "name": {
+            "givenName": "<string>",
+            "familyName": "<string>",
+            "formatted": "<string>"
+          },
+          "emails": [
+            {
+              "value": "<string>",
+              "primary": "<boolean>",
+              "type": "<string>"
+            }
+          ],
+          "displayName": "<string>",
+          "schemas": [
+            "<string>",
+            "<string>"
+          ],
+          "externalId": "<string>",
+          "groups": [
+            "<string>",
+            "<string>"
+          ],
+          "active": "<boolean>"
+        }
+
+        response = requests.post('https://api.github.com/scim/v2/organizations/:org/Users', headers=headers, data=json.dumps(data))
+        print(response.json())
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+        const { Octokit } = require("@octokit/rest");
+        const octokit = new Octokit({
+          auth: 'YOUR-TOKEN'
+        });
+
+        await octokit.request('POST /scim/v2/organizations/{org}/Users', {
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          },
+          ...{
+            "userName": "<string>",
+            "name": {
+              "givenName": "<string>",
+              "familyName": "<string>",
+              "formatted": "<string>"
+            },
+            "emails": [
+              {
+                "value": "<string>",
+                "primary": "<boolean>",
+                "type": "<string>"
+              }
+            ],
+            "displayName": "<string>",
+            "schemas": [
+              "<string>",
+              "<string>"
+            ],
+            "externalId": "<string>",
+            "groups": [
+              "<string>",
+              "<string>"
+            ],
+            "active": "<boolean>"
+          }
+        });
+        ```
     
 
     #### Response Example

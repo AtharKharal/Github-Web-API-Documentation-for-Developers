@@ -20,6 +20,28 @@
     ```
     {% endif %}
 
+    {% if item.snippets %}
+    #### Request Examples
+
+    === "cURL"
+
+        ```bash
+{{ item.snippets.curl | indent(8, True) }}
+        ```
+
+    === "Python (Requests)"
+
+        ```python
+{{ item.snippets.python | indent(8, True) }}
+        ```
+
+    === "JavaScript (Octokit)"
+
+        ```javascript
+{{ item.snippets.javascript | indent(8, True) }}
+        ```
+    {% endif %}
+
     #### Response Example
     
     ```json
