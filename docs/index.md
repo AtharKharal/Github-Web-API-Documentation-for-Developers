@@ -1,4 +1,12 @@
-# GitHub Docs Swarm
+---
+hero:
+  title: GitHub Docs Swarm
+  subtitle: Authoritative, developer-focused documentation for GitHub API and repository internals.
+  link:
+    text: Explore the API
+    url: api-reference/app/
+---
+
 
 Welcome to the GitHub Docs Swarm documentation. This system is designed to provide authoritative, developer-focused documentation for GitHub API and repository internals.
 

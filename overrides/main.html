@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block hero %}
+  {% if page and page.meta and page.meta.hero %}
+    <div class="md-hero" data-md-component="hero">
+      <div class="md-hero__inner md-grid">
+        <div class="md-hero__content">
+          <h1>{{ page.meta.hero.title | default(config.site_name) }}</h1>
+          <p>{{ page.meta.hero.subtitle | default(config.site_description) }}</p>
+          {% if page.meta.hero.link %}
+            <a href="{{ page.meta.hero.link.url }}" class="md-button md-button--primary">
+              {{ page.meta.hero.link.text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+  <footer class="md-footer-custom">
+    <div class="md-grid">
+      <div class="md-footer-custom__inner">
+        <p>&copy; 2026 Developer Documentation Authority. Data synced with GitHub API Reference.</p>
+        <p>Built with <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank">Material for MkDocs</a></p>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

@@ -1,0 +1,90 @@
+:root {
+  /* Sleek, premium custom fonts */
+  --md-text-font: "Inter", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --md-code-font: "JetBrains Mono", SFMono-Regular, Consolas, Menlo, monospace;
+}
+
+/* Light mode overrides */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #2e3b4e;
+  --md-primary-fg-color--light: #44546a;
+  --md-primary-fg-color--dark: #1f2836;
+  --md-accent-fg-color: #4b6bfb;
+  
+  --md-typeset-a-color: #4b6bfb;
+}
+
+/* Dark mode overrides */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #1a1b26;
+  --md-primary-bg-color: #16161e;
+  --md-accent-fg-color: #7aa2f7;
+
+  --md-typeset-color: #c0caf5;
+  --md-typeset-a-color: #7aa2f7;
+  --md-default-bg-color: #1a1b26;
+  --md-default-bg-color--light: #1f2335;
+  --md-default-bg-color--lighter: #24283b;
+  --md-default-fg-color: #c0caf5;
+  --md-default-fg-color--light: #a9b1d6;
+  --md-default-fg-color--lighter: #9aa5ce;
+}
+
+/* Hero Section Styling */
+.md-hero {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  padding: 4rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--md-default-bg-color--light);
+}
+
+.md-hero h1 {
+  color: white;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.md-hero p {
+  color: #e0e0e0;
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* Button enhancements */
+.md-button {
+  border-radius: 6px;
+  font-weight: 600;
+  transform: translateY(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom Footer */
+.md-footer-custom {
+  background-color: var(--md-default-bg-color--light);
+  color: var(--md-default-fg-color--light);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+[data-md-color-scheme="slate"] .md-footer-custom {
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.md-footer-custom a {
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+}
+.md-footer-custom a:hover {
+  text-decoration: underline;
+}
