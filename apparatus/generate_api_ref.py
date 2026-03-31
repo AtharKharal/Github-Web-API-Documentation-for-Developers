@@ -71,7 +71,7 @@ def extract_parameters(request_url):
     # Path variables
     for v in request_url.get('variable', []):
         params.append({
-            'name': f":{v.get('key')}",
+            'name': f"{{{v.get('key')}}}",
             'type': 'string',
             'required': True, # Path variables are typically required
             'description': v.get('description', 'No description.').replace('\n', '<br>').replace('\r', ''),
@@ -143,9 +143,17 @@ def generate_api_reference(collection_path, output_dir, template_dir):
         for item in folder_items:
             req = item['request']
             body_str = extract_body(req)
+            
+            raw_url = req.get('url', {}).get('raw', '') if isinstance(req.get('url'), dict) else str(req.get('url', ''))
+            raw_url = re.sub(r':([a-zA-Z0-9_]+)', r'{\1}', raw_url)
+            req['url']['raw'] = raw_url
+
+            url_path = raw_url.replace('{{baseUrl}}', '').replace('https://api.github.com', '').split('?')[0].strip()
+
             endpoints.append({
                 'name': item['name'],
                 'method': req['method'],
+                'url_path': url_path,
                 'description': req.get('description', 'No description.'),
                 'parameters': extract_parameters(req['url']),
                 'request_body': body_str,

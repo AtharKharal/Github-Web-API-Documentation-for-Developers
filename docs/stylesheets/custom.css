@@ -88,3 +88,54 @@
 .md-footer-custom a:hover {
   text-decoration: underline;
 }
+
+/* API Method Banner */
+.api-method-banner {
+  background-color: var(--md-default-bg-color--light);
+  border: 1px solid var(--md-default-bg-color--lighter);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  font-family: var(--md-code-font);
+  font-size: 0.9em;
+}
+
+.api-method {
+  font-weight: 700;
+  padding: 0.1rem 0.6rem;
+  border-radius: 4px;
+  color: white;
+  margin-right: 1rem;
+  text-transform: uppercase;
+}
+
+.method-get { background-color: #0b5fb6; }
+.method-post { background-color: #2da44e; }
+.method-put { background-color: #dbab09; }
+.method-delete { background-color: #cf222e; }
+.method-patch { background-color: #8250df; }
+
+.api-path {
+  color: var(--md-default-fg-color);
+  font-weight: 500;
+  word-break: break-all;
+}
+
+/* Enhancing endpoint separation */
+h2 {
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--md-default-bg-color--light);
+  margin-top: 3rem !important;
+}
+
+/* Homepage Button Fixes */
+.md-button--primary {
+  padding: 0.6rem 2rem !important;
+  font-size: 1.2rem !important;
+  background-color: var(--md-accent-fg-color) !important;
+  color: white !important;
+  display: inline-block;
+  margin-top: 1rem;
+}

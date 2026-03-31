@@ -1,56 +1,62 @@
 {% for item in items %}
-=== "{{ item.method }} {{ item.name }}"
+## {{ item.name }}
 
-    {{ item.description | indent(4, False) }}
+<div class="api-method-banner">
+  <span class="api-method method-{{ item.method | lower }}">{{ item.method }}</span> <span class="api-path">{{ item.url_path }}</span>
+</div>
 
-    {% if item.parameters %}
-    #### Parameters
+{{ item.description | replace('**Note:**', '> [!NOTE]\n>') | replace('You must use a [JWT]', '> [!IMPORTANT]\n> You must use a [JWT]') }}
 
-    | Parameter | Type | Required | Description | Example |
-    | --- | --- | --- | --- | --- |
-    {% for param in item.parameters %}| `{{ param.name }}` | `{{ param.type }}` | {{ "Yes" if param.required else "No" }} | {{ param.description }} | `{{ param.example }}` |
-    {% endfor %}
-    {% endif %}
+{% if item.parameters %}
+### Parameters
 
-    {% if item.request_body %}
-    #### Request Body
-    
-    ```json
-{{ item.request_body | indent(4, True) }}
-    ```
-    {% endif %}
+| Parameter | Type | Required | Description | Example |
+| --- | --- | --- | --- | --- |
+{% for param in item.parameters %}| `{{ param.name }}` | `{{ param.type }}` | {{ "Yes" if param.required else "No" }} | {{ param.description }} | `{{ param.example }}` |
+{% endfor %}
+{% endif %}
 
-    {% if item.snippets %}
-    #### Request Examples
+{% if item.request_body %}
+### Request Body
 
-    === "cURL"
+```json
+{{ item.request_body }}
+```
+{% endif %}
 
-        ```bash
-{{ item.snippets.curl | indent(8, True) }}
-        ```
+{% if item.snippets %}
+### Request Examples
 
-    === "Python (Requests)"
+=== "cURL"
 
-        ```python
-{{ item.snippets.python | indent(8, True) }}
-        ```
-
-    === "JavaScript (Octokit)"
-
-        ```javascript
-{{ item.snippets.javascript | indent(8, True) }}
-        ```
-    {% endif %}
-
-    #### Response Example
-    
-    ```json
-{{ item.response_body | indent(4, True) }}
+    ```bash
+{{ item.snippets.curl | indent(4, True) }}
     ```
 
-    {% if item.notes %}
-    > [!NOTE]
-    > {{ item.notes | indent(4, False) }}
-    {% endif %}
+=== "Python (Requests)"
+
+    ```python
+{{ item.snippets.python | indent(4, True) }}
+    ```
+
+=== "JavaScript (Octokit)"
+
+    ```javascript
+{{ item.snippets.javascript | indent(4, True) }}
+    ```
+{% endif %}
+
+### Response Example
+
+```json
+{{ item.response_body }}
+```
+
+{% if item.notes %}
+> [!NOTE]
+> {{ item.notes }}
+{% endif %}
+
+---
 
 {% endfor %}
