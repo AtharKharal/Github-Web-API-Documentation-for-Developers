@@ -20,8 +20,10 @@ theme:
         name: Switch to light mode
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
+    - navigation.top
     - content.tabs.link
     - content.code.copy
     - content.code.annotate
@@ -54,12 +56,14 @@ nav:
       - Overview: tutorials/index.md
       - Hello World: tutorials/hello-world.md
       - Resource Interlinking: tutorials/resource-interlinking.md
+      - Security Hardening: tutorials/security-hardening.md
   - How-to Guides:
       - Overview: how-to/index.md
       - Manage Repositories: how-to/manage-repositories.md
       - Automate Issues: how-to/automate-issues.md
       - Manage Organizations: how-to/manage-organizations.md
       - Search and Discover: how-to/search-and-discover.md
+      - Manage GitHub Actions: how-to/manage-actions.md
   - Explanations:
       - Overview: explanations/index.md
       - Authentication: explanations/authentication.md

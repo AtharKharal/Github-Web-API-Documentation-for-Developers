@@ -139,3 +139,26 @@ h2 {
   display: inline-block;
   margin-top: 1rem;
 }
+
+/* Sticky Navigation Enhancements */
+.md-tabs {
+  position: sticky !important;
+  top: 48px; /* Standard Material Header Height */
+  z-index: 99;
+  background-color: var(--md-primary-fg-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: top 0.2s ease;
+}
+
+.md-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 100;
+}
+
+/* Ensure the hero doesn't overlap the sticky nav */
+.md-hero {
+  z-index: 1;
+  position: relative;
+}
+

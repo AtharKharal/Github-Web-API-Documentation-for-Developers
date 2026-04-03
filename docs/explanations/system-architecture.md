@@ -23,6 +23,20 @@ No layer may perform the responsibilities of another. The automation tier never 
 
 ---
 
+## Dimensional Hierarchy
+
+The following Mermaid diagram illustrates the deterministic relationship between the three layers of the core architecture:
+
+```mermaid
+graph TD
+    A[Governance: governance.md] --> B[Expert Modules: expert-modules/]
+    B --> C[Automation Tier: automation-tier/]
+    C -- "Produces" --> D[Public Documentation: docs/]
+    D -- "Validated by" --> A
+```
+
+---
+
 ## Source of Truth Hierarchy
 
 Documentation content is derived from sources in strict priority order:
