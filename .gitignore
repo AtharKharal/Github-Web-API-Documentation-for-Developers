@@ -1,6 +1,9 @@
 .venv/
 .tmp/
+practitioners/
+apparatus/
 site/
 __pycache__/
+agents.md
 .env
 
