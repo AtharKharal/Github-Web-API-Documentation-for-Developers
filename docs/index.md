@@ -1,9 +1,9 @@
 ---
 title: GitHub REST API Documentation
-description: Authoritative, developer-focused documentation for the GitHub REST API with 288+ endpoints, tutorials, how-to guides, and conceptual explanations.
+description: Authoritative, developer-focused documentation for the GitHub REST API with 607 endpoints, tutorials, how-to guides, and conceptual explanations.
 meta:
   - name: description
-    content: Complete developer documentation for GitHub REST API v3. Covers authentication, rate limiting, repositories, issues, PRs, actions, and more.
+    content: Complete developer documentation for GitHub REST API v3 with all 607 endpoints documented. Covers authentication, rate limiting, repositories, issues, PRs, actions, and more.
   - name: keywords
     content: GitHub API, REST API, GitHub REST v3, API documentation, GitHub developer, GitHub Actions, GitHub CLI
   - name: author
@@ -11,7 +11,7 @@ meta:
   - property: og:title
     content: GitHub REST API Documentation
   - property: og:description
-    content: Authoritative developer documentation for the GitHub REST API
+    content: Authoritative developer documentation for the GitHub REST API - 607 endpoints documented
   - property: og:type
     content: website
 tags:
@@ -33,7 +33,20 @@ hero:
     text: Quick Start
     url: quickstart/
 
-Authoritative, developer-focused documentation for 288+ GitHub REST API endpoints. All content is generated directly from the Postman collection and repository source — nothing is speculated or invented.
+<div style="display: flex; gap: 1rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap;">
+
+[![Auto-Synced](https://img.shields.io/badge/Auto--Synced%20via-GitHub%20Actions-2ea44f?style=for-the-badge)](https://github.com/AtharKharal/Github-Web-API-Documentation-3/actions)
+
+[![607 Endpoints](https://img.shields.io/badge/607%20Endpoints-Documented-success?style=for-the-badge)](api-reference/repos.md)
+
+[![MIT License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+</div>
+
+Authoritative, developer-focused documentation for **607 GitHub REST API endpoints**. All content is generated directly from the Postman collection and repository source — nothing is speculated or invented.
+
+!!! info "Auto-Synchronized"
+    This documentation site automatically updates on every push to the main branch via GitHub Actions. View the [deployment workflow](https://github.com/AtharKharal/Github-Web-API-Documentation-3/actions) for details.
 
 ## Documentation Structure
 
