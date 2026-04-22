@@ -26,13 +26,6 @@ related:
   - explanations/rate-limiting.md
 ---
 
-hero:
-  title: GitHub REST API Documentation
-  subtitle: Complete developer reference for 607 GitHub API endpoints
-  link:
-    text: Quick Start
-    url: quickstart/
-
 <div class="badges-row" style="display: flex; gap: 16px; justify-content: center; margin: 24px 0 16px 0; flex-wrap: wrap;">
 
 <span style="background: #238636; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
@@ -44,8 +37,8 @@ hero:
   607 Endpoints Documented
 </span>
 
-<span style="background: #6e7681; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-  MIT Licensed
+<span style="background: #8250df; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  MkDocs Powered
 </span>
 
 </div>
